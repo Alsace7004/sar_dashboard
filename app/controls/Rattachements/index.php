@@ -40,7 +40,7 @@
 											<th class="d-none d-xl-table-cell">Role</th>
 											<th>Canton</th>
 											<th class="d-none d-md-table-cell">Email</th>
-                                            <th class="d-none d-md-table-cell">Actions</th>
+                                            <!--<th class="d-none d-md-table-cell">Actions</th>-->
 										</tr>
 									</thead>
 									<tbody>
@@ -193,7 +193,7 @@
                         tsr+="<td>"+nom_canton+"</td>";
                         tsr+="<td class='d-none d-md-table-cell'>"+email+"</td>";
                         tsr+="<td>";
-                            tsr+="<button class='btn btn-primary btn-sm' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
+                            //tsr+="<button class='btn btn-primary btn-sm' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
                             //tsr+="<button class='btn btn-danger' onclick='delete_data(this)' data-key='"+id+"'>Del</button>";
                         tsr+="</td>";
                     

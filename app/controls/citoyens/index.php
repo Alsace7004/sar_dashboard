@@ -36,7 +36,7 @@
 											<th class="d-none d-xl-table-cell">Genre</th>
 											<th>Profession</th>
 											<th class="d-none d-md-table-cell">Canton</th>
-                                            <th class="d-none d-md-table-cell">Actions</th>
+                                            <!--<th class="d-none d-md-table-cell">Actions</th>-->
 										</tr>
 									</thead>
 									<tbody>
@@ -150,7 +150,7 @@
                             tsr+="<td>"+profession+"</td>";
                             tsr+="<td class='d-none d-md-table-cell'>"+nom_canton+"</td>";
                             tsr+="<td>";
-                                tsr+="<button class='btn btn-primary' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
+                                //tsr+="<button class='btn btn-primary' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
                                 //tsr+="<button class='btn btn-danger' onclick='delete_data(this)' data-key='"+id+"'>Del</button>";
                             tsr+="</td>";
                         

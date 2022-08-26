@@ -35,7 +35,7 @@
 											<th class="d-none d-xl-table-cell">Canton</th>
 											<th class="d-none d-xl-table-cell">Ville</th>
 											<!--<th class="d-none d-md-table-cell">Created_at</th>-->
-                                            <th class="d-none d-md-table-cell">Actions</th>
+                                            <!--<th class="d-none d-md-table-cell">Actions</th>-->
 										</tr>
 									</thead>
 									<tbody>
@@ -139,7 +139,7 @@
                         tsr+="<td class='d-none d-xl-table-cell'>"+nom_ville+"</td>";
                         //tsr+="<td class='d-none d-md-table-cell'>"+created_at+"</td>";
                         tsr+="<td>";
-                            tsr+="<button class='btn btn-primary' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
+                            //tsr+="<button class='btn btn-primary' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
                             //tsr+="<button class='btn btn-danger' onclick='delete_data(this)' data-key='"+id+"'>Del</button>";
                         tsr+="</td>";
                     

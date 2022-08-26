@@ -1,0 +1,16 @@
+.logo-navbar{
+    width: 200px;
+}
+/* 
+.sidebar-link, a.sidebar-link{
+    background-color: transparent;
+}
+.sidebar, .sidebar-content{
+    background: rgb(0,0,5);
+    background: linear-gradient(0deg, rgba(0,0,5,1) 0%, rgba(8,61,1,0.9163262717196253) 36%, rgba(1,97,11,0.4961582044927346) 100%);
+}
+.sidebar-item.active .sidebar-link:hover, .sidebar-item.active>.sidebar-link{
+    background: linear-gradient(90deg,rgba(0, 17, 8, 0.903),rgba(10, 68, 2, 0.713) 50%,transparent);
+    border-left-color:#fff;
+    color:#fff;
+} */

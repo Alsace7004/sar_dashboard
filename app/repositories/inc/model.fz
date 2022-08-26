@@ -1,0 +1,38 @@
+<!-- header -->
+<?php include("../../repositories/inc/header.php") ?>
+<!-- /header -->
+
+    <!-- NAVIGATION -->
+    <?php include("../../repositories/inc/navbar.php") ?>
+    <!-- /NAVIGATION -->
+    <!-- Nav-top -->
+    <?php include("../../repositories/inc/nav-top.php") ?>
+    <!-- /Nav-top -->
+    
+    <!-- 
+        =============== COMMENCER VOTRE CODE ICI
+     -->
+    
+    <h1 class="h3 mb-3">PAGE MODEL</h1>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">VIDE</h5>
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        =============== FIN DE VOTRE CODE
+     -->
+    <!-- MAIN-CLOSER -->
+    <?php include("../../repositories/inc/main-closer.php") ?>
+    <!-- MAIN-CLOSER -->
+
+<!-- footer -->
+<?php include("../../repositories/inc/footer.php") ?>
+<!-- /footer -->

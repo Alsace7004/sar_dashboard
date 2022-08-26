@@ -31,11 +31,12 @@
 								<table class="table table-hover my-0">
 									<thead>
 										<tr>
+											<th>Id</th>
 											<th>Nom</th>
 											<th class="d-none d-xl-table-cell">Prenom</th>
-											<th class="d-none d-xl-table-cell">Genre</th>
-											<th>Profession</th>
-											<th class="d-none d-md-table-cell">Canton</th>
+											<th class="d-none d-xl-table-cell">Role</th>
+											<th>Canton</th>
+											<th class="d-none d-md-table-cell">Email</th>
                                             <th class="d-none d-md-table-cell">Actions</th>
 										</tr>
 									</thead>
@@ -118,31 +119,32 @@
 
 <script>
     const getAllCitoyens = async () =>{
-            var res  =  await fetch("http://localhost:5000/api/citoyens");
+            var res  =  await fetch("http://localhost:5000/api/rattachements");
             var result = await res.json();
-            console.log("valeur de result:",result.citoyens);
+            console.log("valeur de result:",result.ratachement);
             //ici j'ai un tableau d'objets
             //console.log("Resulat du tableau d'objets : ",result);
             var tsr="";
-            result.citoyens.map(
+            result.ratachement.map(
                 (result)=>{
                     //ici j'ai des objets
                     //console.log("Resulat des objets : ",result);
                     var id = result.id;
                     var name = result.name;
-                    var prenom = result.prenom;
-                    var profession = result.profession;
+                    var firstname = result.firstname;
+                    var role_name = result.role_name;
                     var nom_canton = result.nom_canton;
-                    var genre_name = result.genre_name;
-                    var birthday = result.birthday;
+                    var email = result.email;
+                    //var birthday = result.birthday;
 
                     //console.log("firstname : "+firstname+"\n Lastname : "+lastname+"\nEmail : "+email+"\nAge : "+age+"\n");
                     tsr+="<tr>";
+						tsr+="<td>"+id+"</td>";
                         tsr+="<td>"+name+"</td>";
-                        tsr+="<td class='d-none d-xl-table-cell'>"+prenom+"</td>";
-                        tsr+="<td class='d-none d-xl-table-cell'>"+genre_name+"</td>";
-                        tsr+="<td>"+profession+"</td>";
-                        tsr+="<td class='d-none d-md-table-cell'>"+nom_canton+"</td>";
+                        tsr+="<td class='d-none d-xl-table-cell'>"+firstname+"</td>";
+                        tsr+="<td class='d-none d-xl-table-cell'>"+role_name+"</td>";
+                        tsr+="<td>"+nom_canton+"</td>";
+                        tsr+="<td class='d-none d-md-table-cell'>"+email+"</td>";
                         tsr+="<td>";
                             tsr+="<button class='btn btn-primary' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
                             //tsr+="<button class='btn btn-danger' onclick='delete_data(this)' data-key='"+id+"'>Del</button>";

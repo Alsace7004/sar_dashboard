@@ -122,11 +122,28 @@
 							</button>
 						</div>
 						<div class="modal-body">
-							...
+								
+							<div class="form-group">
+								<label for="">Liste des Cantons</label>
+								<select name="" id="listCanton" onchange="cantonChange(this)" class="form-control">
+									<option value="">Agoe</option>
+									<option value="">Fiovi</option>
+									<option value="">Hounbi</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="">Liste des Agents</label>
+								<select name="" id="listAgent" onchange="agentChange(this)" class="form-control">
+									<option value="">Agent-1</option>
+									<option value="">Agent-2</option>
+									<option value="">Agent-3</option>
+								</select>
+							</div>
+							
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-							<button type="button" class="btn btn-primary">Ajouter</button>
+							<button type="button" onclick="affecterAgent()" class="btn btn-primary">Ajouter</button>
 						</div>
 					</div>
 				</div>
@@ -145,6 +162,9 @@
 
 
 <script>
+	var id_canton="";
+	var id_agent="";
+	//recuperer la liste des rattachements
     const getAllCitoyens = async () =>{
             var res  =  await fetch("http://localhost:5000/api/rattachements");
             var result = await res.json();
@@ -184,4 +204,88 @@
         
     }
     getAllCitoyens();
+	//recuperer la liste des cantons
+	const loadAllCantons  = async ()=>{
+		var res  =  await fetch("http://localhost:5000/api/cantons");
+            var result = await res.json();
+            console.log("valeur de result:",result.cantons);
+            //ici j'ai un tableau d'objets
+            //console.log("Resulat du tableau d'objets : ",result);
+            var tsrt="";
+            result.cantons.map(
+                (result)=>{
+                    //ici j'ai des objets
+                    //console.log("Resulat des objets : ",result);
+                    var id = result.id;
+                    var nom_canton = result.nom_canton;
+                    var nom_ville = result.nom_ville;
+                    var created_at = result.created_at;
+                  
+                    //console.log("firstname : "+firstname+"\n Lastname : "+lastname+"\nEmail : "+email+"\nAge : "+age+"\n");
+						tsrt+="<option value='"+id+"'>"+nom_canton+"</option>";
+                }
+            );
+            document.querySelector("#listCanton").innerHTML=tsrt;
+	}
+	loadAllCantons();
+	//recuperer la liste des agents
+	const loadAllAgents  = async ()=>{
+		var res  =  await fetch("http://localhost:5000/api/users/agents");
+            var result = await res.json();
+            console.log("valeur des agents:",result.users);
+            //ici j'ai un tableau d'objets
+            //console.log("Resulat du tableau d'objets : ",result);
+            var tsrt="";
+            result.users.map(
+                (result)=>{
+                    //ici j'ai des objets
+                    //console.log("Resulat des objets : ",result);
+                    var id = result.id;
+                    var name = result.name;
+                    var firstname = result.firstname;
+                    //var created_at = result.created_at;
+                  
+                    //console.log("firstname : "+firstname+"\n Lastname : "+lastname+"\nEmail : "+email+"\nAge : "+age+"\n");
+						tsrt+="<option value='"+id+"'>"+name+" "+firstname+"</option>";
+                }
+            );
+            document.querySelector("#listAgent").innerHTML=tsrt;
+	}
+	loadAllAgents();
+
+
+	const cantonChange =(k) =>{
+		//alert("valeur de k :"+k);
+		//console.log("valeur du k",k)
+		 id_canton = document.querySelector("#listCanton").value;
+		//console.log("valeur de son id:",id_canton);
+	}
+	const agentChange =(s) =>{
+		//alert("valeur de k :"+s);
+		//console.log("valeur du s",s)
+		 id_agent = document.querySelector("#listAgent").value;
+		//console.log("valeur de son id:",id_agent);
+	}
+
+		//action de rattachements
+		const affecterAgent =  () =>{
+			//alert("je vais ajouter"+id_canton+" et "+id_agent);
+			var rattach = {
+				"user_id":id_agent,
+				"cantons_id":id_canton
+			}
+			fetch("http://localhost:5000/api/rattachement",{
+				method:"POST",
+				body:JSON.stringify(rattach),
+				headers:{
+					"content-type":"application/json"
+				}
+			}).then((answer)=>{
+				//liste de tous les rattachements
+				getAllCitoyens();
+					alert("Nouvelle Affection Effectué Avec Success");
+			}).catch((error)=>{
+				console.log("valeur de err :",error.message);
+			});
+		}
 </script>

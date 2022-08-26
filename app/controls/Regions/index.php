@@ -33,7 +33,7 @@
 										<tr>
 											<th>Id</th>
 											<th class="d-none d-xl-table-cell">Nom Region</th>
-											<th class="d-none d-md-table-cell">Date creation</th>
+											<!--<th class="d-none d-md-table-cell">Date creation</th>-->
                                             <th class="d-none d-md-table-cell">Actions</th>
 										</tr>
 									</thead>
@@ -136,7 +136,7 @@
                     tsr+="<tr>";
 						tsr+="<td>"+id+"</td>";
                         tsr+="<td class='d-none d-xl-table-cell'>"+intitule+"</td>";
-                        tsr+="<td class='d-none d-xl-table-cell'>"+created_at+"</td>";
+                        //tsr+="<td class='d-none d-xl-table-cell'>"+created_at+"</td>";
                         tsr+="<td>";
                             tsr+="<button class='btn btn-primary' onclick='edit_data(this)' data-key='"+id+"'>Edit</button>";
                             //tsr+="<button class='btn btn-danger' onclick='delete_data(this)' data-key='"+id+"'>Del</button>";
